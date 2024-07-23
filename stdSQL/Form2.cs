@@ -77,6 +77,7 @@ namespace stdSQL
             }
 
             config.Save(ConfigurationSaveMode.Modified);
+            ConfigurationManager.RefreshSection("connectionStrings");
             conStrChanged?.Invoke(this, EventArgs.Empty); //connectingStrings change EVENT
 
             MessageBox.Show("연결 정보가 저장되었습니다.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
